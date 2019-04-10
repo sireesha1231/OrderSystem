@@ -1,0 +1,99 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Gloria Hallelujah', cursive;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.container {
+    width: 100%;
+}
+
+.copyright {
+    color: #fff;
+}
+
+#bg {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 500px;
+}
+
+
+ul { /* all lists... */
+    padding: 0;
+    margin: 0;
+    background: #18BC9C;
+    z-index: 1000;
+}
+
+li { /* all list items... */
+    display: inline; /* set the list items left-to-right */
+    position: relative; /* set the origin for child boxes to be positioned from */
+    z-index: 1000;
+}
+
+ul ul { /* lists within lists... */
+    position: absolute; /* place them over the top of everything */
+    left: 0; /* align them to the left of the parent list item  - necessary for some older browsers */
+    top: 100%; /* align them to the bottom of the parent list item - again only necessary for older browsers */
+    display: none; /* hide 'em */
+    z-index: 1000;
+}
+
+li:hover ul { /* when list items are hovered over, do this to lists contained within them... */
+    display: block; /* show 'em */
+    z-index: 1000;
+}
+    /* Sticky footer styles
+-------------------------------------------------- */
+    @media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    font-size: 18px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
