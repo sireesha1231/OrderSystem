@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,6 +13,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using OrderSystem.Models;
 
 namespace OrderSystem
@@ -39,6 +42,8 @@ namespace OrderSystem
             {
             options.UseSqlServer(Configuration.GetConnectionString("OrderingSystemConnection"));
             });
+
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
@@ -72,5 +77,6 @@ namespace OrderSystem
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
     }
 }

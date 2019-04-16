@@ -4,35 +4,30 @@
 
 
 @{
-    ViewData["Title"] = "Sub Category Detail";
+    ViewData["Title"] = "Sub-Category";
     var subcategories = ViewData["subcategories"] as List<Sub_Category_Details>;
 
 }
-<h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
 
 
 <div class="text-center">
-    <h1 class="display-4">@ViewData["Title"]</h1>
 
+    <table cellpadding="0" cellspacing="0">
 
-    <div class="text-center">
-        <table cellpadding="0" cellspacing="0">
+        @foreach (Sub_Category_Details sub_Category in subcategories)
+        {
             <tr>
-                <th>Category Name</th>
-
+                <td>
+                    <a style="float:left;" href="/Product/Products/@sub_Category.Sub_Category_ID"><img class="rounded-image" src="@sub_Category.Sub_Category_Image" /></a>
+                    <p style="width: 400px;text-align:justify;float:right;padding: 40px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <br />
+                    <a style="float:right;" class="sub-cat-title" href="/Product/Products/@sub_Category.Sub_Category_ID">@sub_Category.Sub_Category_Name</a>
+                </td>
             </tr>
-            @foreach (var category in subcategories)
-            {
-                <tr>
-                    <td>
-                        @category.Sub_Category_Name
-                    </td>
-
-                </tr>
-            }
-        </table>
-    </div>
+        }
+    </table>  
+    <br />
 
 </div>

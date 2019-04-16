@@ -1,30 +1,32 @@
 ﻿@{
-    ViewData["Title"] = "Login Page";
+    ViewData["Title"] = "Returning Customer";
 }
 
-<div class="text-center">
-    <h1 class="display-4">@ViewData["Title"]</h1>
-    <form method="post" action="/home/loginValidate">
+<div class="text-center" style="height: 400px">
 
+    <form method="post" action="/home/loginValidate" style="margin: 50px auto 0; width: 50%; border: 3px solid #97be11; padding: 0 0 1em 0;">
+        <h2 style="background-color: #97be11; color: #fff; margin: 0;padding: 0.5em;">@ViewData["Title"]</h2>
+        <br />
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-lg-6">
                 Email ID:
             </div>
-            <div class="col-sm-9">
+            <div class="col-lg-6">
                 <input type="text" name="email_id" id="email_id" />
             </div>
         </div>
+        <br />
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-6">
                 Password:
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-6">
                 <input type="password" name="password" id="password" />
             </div>
         </div>
-
+        <br />
         <div class=" row">
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="text-light bg-dark" style="margin: 0 auto;padding: 10px 20px;">Login</button>
         </div>
         <div>
             <span class="text-center">@ViewData["Error"]</span>

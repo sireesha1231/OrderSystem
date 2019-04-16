@@ -1,12 +1,12 @@
 ﻿@{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "New Customer";
 }
 
-<div class="text-center">
-    <h1 class="display-4">@ViewData["Title"]   </h1>
+<div class="text-center"  style="height: 800px">
 
-    <form method="post" action="/home/save">
-        <div class="form-row">
+    <form method="post" action="/home/save" style="margin: 50px auto 0; width: 50%; border: 3px solid #97be11; padding: 0 0 1em 0;">
+        <h2 style="background-color: #97be11; color: #fff; margin: 0;padding: 0.5em;">@ViewData["Title"]</h2>
+        <div class="form-row" style="padding: 1em;">
             <div class="form-group col-sm-6">
                 <label for="firstname">First Name</label>
                 <input type="text" class="form-control" id="firstname" placeholder="First Name" name="firstname">
@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <div class="form-row">
+        <div class="form-row" style="padding: 1em;">
             <div class="form-group col-sm-6">
                 <label for="email_id">Email ID</label>
                 <input type="text" class="form-control" id="email_id" placeholder="Email ID" name="email_id">
@@ -28,21 +28,21 @@
             </div>
         </div>
 
-        <div class="form-row">
+        <div class="form-row" style="padding: 1em;">
             <div class="form-group col-sm-12">
                 <label for="dob">Date Of Birth</label>
                 <input type="text" class="form-control" id="dob" placeholder="Date Of Birth" name="dob">
             </div>
         </div>
 
-        <div class="form-row">
+        <div class="form-row" style="padding: 1em;">
             <div class="form-group col-sm-12">
                 <label for="address">Address</label>
                 <input type="text" class="form-control" id="address" placeholder="Address" name="address">
             </div>
         </div>
 
-        <div class="form-row">
+        <div class="form-row" style="padding: 1em;">
             <div class="form-group col-sm-6">
                 <label for="city">City</label>
                 <input type="text" class="form-control" id="city" placeholder="City" name="city">
@@ -57,8 +57,8 @@
             </div>
         </div>
 
-        <div class="row">
-            <button type="submit" class="btn btn-primary">Save</button>
+        <div class="row" style="padding: 1em;">
+            <button type="submit" class="text-light bg-dark" style="margin: 0 auto;padding: 10px 20px;">Register</button>
         </div>
         <div>
             <span class="text-center">@ViewData["Error"]</span>

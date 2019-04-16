@@ -32,13 +32,24 @@ namespace OrderSystem.Controllers
 
 
         [HttpGet]
-        public IActionResult SubCategory()
+        public IActionResult SubCategory(int id)
         {
-            var subcategories = _context.Sub_Category_Details.ToList();
+            var subcategories = _context.Sub_Category_Details.Where(x => x.Category_ID == id).ToList();
             ViewData["subcategories"] = subcategories;
 
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Products(int id)
+        {
+            var products = _context.Product_Details.Where(x => x.Sub_Category_ID == id).ToList();
+            ViewData["products"] = products;
+
+            return View();
+        }
+
+
 
 
 

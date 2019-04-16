@@ -13,5 +13,6 @@ namespace OrderSystem.Models
         [Key]
         public int Category_ID { get; set; }
         public string Category_Name { get; set; }
+        public List<Sub_Category_Details> Sub_Category_Details { get; set; }
     }
 }

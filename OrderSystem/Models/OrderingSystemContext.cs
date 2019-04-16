@@ -22,5 +22,7 @@ namespace OrderSystem.Models
         public DbSet<Product_Details> Product_Details { get; set; }
         public DbSet<Category_Detail> Category_Detail { get; set; }
         public DbSet<Sub_Category_Details> Sub_Category_Details { get; set; }
+        public DbSet<Order_Details> Order_Details { get; set; }
+        public DbSet<Shopping_Cart> Shopping_Cart { get; set; }
     }
 }

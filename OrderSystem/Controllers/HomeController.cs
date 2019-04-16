@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OrderSystem.Models;
@@ -62,6 +64,43 @@ namespace OrderSystem.Controllers
 
 
             return RedirectToAction("Login");
+        }
+
+        public IActionResult About()
+        {
+            if (TempData["Error"] != null)
+            {
+                ViewData["Error"] = TempData["Error"];
+            }
+            return View();
+        }
+
+        public IActionResult Contact_Us()
+        {
+            if (TempData["Error"] != null)
+            {
+                ViewData["Error"] = TempData["Error"];
+            }
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult My_Account()
+        {
+            if (TempData["Error"] != null)
+            {
+                ViewData["Error"] = TempData["Error"];
+            }
+            return View();
+        }
+
+        public IActionResult Terms()
+        {
+            if (TempData["Error"] != null)
+            {
+                ViewData["Error"] = TempData["Error"];
+            }
+            return View();
         }
 
         public IActionResult Signup()

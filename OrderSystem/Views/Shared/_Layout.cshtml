@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
@@ -28,7 +28,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">OrderSystem</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Fresh Market</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -37,21 +37,28 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            
-                            <a href="" class="nav-link text-dark">Category</a>
+
+                            <a href="" class="nav-link text-light">Category</a>
                             <ul>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Signup">Signup</a></li>
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="1">Beverages</a></li>
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="2">Frozen</a></li>
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="3">Dairy</a></li>
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="5">Produce</a></li>
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="6">Bakery</a></li>
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="7">Meat</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Signup">Signup</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Signup">Signup</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="ShoppingCart" asp-action="ShoppingCart">Shopping Cart</a>
                         </li>
                     </ul>
                 </div>
@@ -62,7 +69,7 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div>
         <partial name="_CookieConsentPartial" />
         <main role="main">
             @RenderBody()
@@ -71,8 +78,37 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            <p class="copyright">© OrderSystem 2019</p>
+            <div class="footer-info" style="width:25%; height:100%; float:left;">
+                <h4>My Account</h4>
+                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="My_Account">My Account</a>
+                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Signup">Signup</a>
+            </div>
+            <div class="footer-info" style="width:25%; height:100%; float:left;">
+                <h4>Information</h4>
+                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Contact_Us">Contact Us</a>
+                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Terms">Terms and Conditions</a>
+            </div>
+            <div class="footer-info" style="width:25%; height:100%; float:left;">
+                <h4>Categories</h4>
+                <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="1">Beverages</a>
+                <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="2">Frozen</a>
+                <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="3">Dairy</a>
+                <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="5">Produce</a>
+                <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="6">Bakery</a>
+                <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="SubCategory" asp-route-id="7">Meat</a>
+            </div>
+            <div class="footer-info" style="width:25%; height:100%; float:left;">
+                <h4>Find Us</h4>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
         </div>
+        <hr />
+        <p class="copyright">© Fresh Market 2019</p>
     </footer>
 
     <environment include="Development">
